@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ks_xlm.dao.AchievementDao">
+    <resultMap id="achievementMAP" type="com.ks_xlm.entity.Achievement">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="test_paper_id" property="testPaperId" jdbcType="INTEGER"/>
+        <result column="total" property="total" jdbcType="INTEGER"/>
+    </resultMap>
+
+</mapper>

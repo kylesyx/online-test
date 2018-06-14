@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ks_xlm.dao.QuestionDao">
+    <resultMap id="questionMAP" type="com.ks_xlm.entity.Question">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="problem" property="problem" jdbcType="VARCHAR"/>
+        <result column="answer" property="answer" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="questionSQL">
+        id,problem,answer
+    </sql>
+    <insert id="questionAdd" parameterType="com.ks_xlm.entity.Question">
+        INSERT INTO question
+          (id,problem,answer)
+        VALUES
+          (#{id},#{problem},#{answer})
+    </insert>
+
+    <delete id="questionDelete" parameterType="java.lang.Integer">
+        delete from question where id=#{id}
+    </delete>
+
+    <update id="questionUpdate" parameterType="com.ks_xlm.entity.Question">
+        update question set problem=#{problem},answer=#{answer}
+        where id=#{id}
+    </update>
+
+    <select id="questionSelect" parameterType="com.ks_xlm.entity.Question" resultMap="questionMAP">
+        select <include refid="questionSQL"/>
+        from question
+        where id=#{id}
+    </select>
+
+</mapper>
