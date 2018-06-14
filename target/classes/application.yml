@@ -7,3 +7,5 @@ spring:
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.ks_xlm.model
+server:
+  port: 8081
