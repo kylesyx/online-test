@@ -11,4 +11,6 @@ public interface UserService {
     void userUpdate(User user);
     //用户列表查询
     User userSelect(String username);
+    //用户验证 生成token
+    //String userVerify(User user);
 }

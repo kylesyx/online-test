@@ -28,4 +28,7 @@ public class UserServiceImpl implements UserService {
     public User userSelect(String username) {
         return userDao.userSelect(username);
     }
+
+    //@Override
+    //public String userVerify(User user){return userDao.userVerify(user);}
 }

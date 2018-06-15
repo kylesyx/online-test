@@ -14,7 +14,9 @@ public class AuthIntercepter implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
         httpServletResponse.setHeader("Access-Control-Allow-Headers", "token, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Accept, Origin");
-        return true;
+        String token = httpServletRequest.getHeader("token");
+        boolean result = JWTUtil.validToken(token,"12345");
+        return result;
     }
 
     @Override

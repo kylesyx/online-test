@@ -24,4 +24,5 @@ public interface UserDao {
     //用户列表查询
     User userSelect(String username);
 
+    //String userVerify(User user);
 }
