@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebConfig extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(new AuthIntercepter()).addPathPatterns("/**").excludePathPatterns("/uc/verify");
+        registry.addInterceptor(new AuthIntercepter()).addPathPatterns("/**").excludePathPatterns("/uc/verify","/uc/select","/uc/uadd");
     }
 
     public void addCorsMappings(CorsRegistry registry) {

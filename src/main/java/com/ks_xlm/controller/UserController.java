@@ -40,7 +40,7 @@ public class UserController {
         User user1=userService.userSelect(user.getUsername());
         if (user1!=null){
             if (user.getPassword().equals(user1.getPassword())){
-                return JWTUtil.generateToken(user.getUsername(),"12345");
+                return JWTUtil.generateToken(user.getId()+"","12345");
             }
             else return "1";
         }
